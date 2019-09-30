@@ -1,0 +1,25 @@
+$font-size: 20px !default;
+$base-rem: .618rem !default;
+$btn-container-height: $base-rem * 10 !default;
+
+
+$white:(
+        'base': #ffffff,
+        'lighten-5': #fafafa,
+        'lighten-4': #f5f5f5,
+        'lighten-3': #eeeeee,
+        'lighten-2': #e0e0e0,
+        'lighten-1': #bdbdbd,
+        'darken-1': #757575,
+        'darken-2': #616161,
+        'darken-3': #424242,
+        'darken-4': #212121
+) !default;
+
+$blue: (
+        'base': #009FFD,
+        'light-blue': rgba(0,159,253,.4),
+        'cyan': #06D6A0
+) !default;
+
+$yellow: #fec771 !default;

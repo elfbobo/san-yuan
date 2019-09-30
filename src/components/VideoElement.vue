@@ -1,5 +1,14 @@
 <template>
-  <video :src="videoSrc" controls loop width="1000"></video>
+  <video
+    class="video-element"
+    ref="video"
+    :controls="controls"
+    :loop="loop"
+    :autoplay="autoplay"
+    :muted="muted"
+  >
+    <source :src="videoSrc">
+  </video>
 </template>
 
 <script>
@@ -9,9 +18,24 @@ export default {
   props: {
     videoSrc: {
       type: [Object, Boolean, String],
-      default: 'http://cdn.lagabu.com/f60f61cbbb6d3369867d9b7dac2524d3.mp4'
+      default: 'http://cdn.lagabu.com/xczxg1.mp4'
+    },
+    controls: {
+      type: [Object, Boolean, String],
+      default: false
+    },
+    loop: {
+      type: [Object, Boolean, String],
+      default: 'loop'
+    },
+    autoplay: {
+      type: [Object, Boolean, String],
+      default: 'autoplay'
+    },
+    muted: {
+      type: [Object, Boolean, String],
+      default: 'muted'
     }
   }
-
 }
 </script>

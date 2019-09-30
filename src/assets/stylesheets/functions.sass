@@ -1,0 +1,11 @@
+=box-shadow($mode)
+  @if($mode == 'base')
+    box-shadow: 0 1px $base-rem*.5 0 map-get($white, 'darken-4')
+
+=justify-vertical-center
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  top: 0
+  margin: auto
