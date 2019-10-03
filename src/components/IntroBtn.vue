@@ -1,11 +1,9 @@
 <template>
-  <div class="intro-btn" @click="oc">
+  <div class="intro-btn" @click="onclickBtn">
     <svg xmlns="http://www.w3.org/2000/svg">
-
       <rect id="shape" x="10%" y="12%" rx="10" ry="10">
       </rect>
     </svg>
-
     <div id="text">
       <a>
         <slot></slot>
@@ -31,9 +29,21 @@ export default {
       default: 'base'
     }
   },
+  computed: {
+    showModal: {
+      get () {
+        return this.$store.state.showModal
+      },
+      set (val) {
+        this.$store.state.showModal = val
+      }
+    }
+  },
   methods: {
-    oc () {
-      console.log('fu')
+    onclickBtn () {
+      if (this.mode === 'base') {
+        this.showModal = true
+      }
     }
   }
 

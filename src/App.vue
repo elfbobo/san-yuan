@@ -5,10 +5,12 @@
       <intro-btn
         v-for="(item,i) in btnContent"
         :key="i"
-        @click="onclickBtn"
+        :mode="item.type"
       >{{ item.name }}</intro-btn>
     </div>
-    <modal-element v-show="showModal">
+    <modal-element
+      v-show="showModal"
+    >
     </modal-element>
   </div>
 </template>
@@ -17,7 +19,7 @@
 import './assets/stylesheets/styles.sass'
 import VideoElement from '@/components/VideoElement'
 import IntroBtn from '@/components/IntroBtn'
-import ModalElement from '@/components/ModalElement'
+import ModalElement from './components/ModalElement'
 
 export default {
   name: 'app',
@@ -27,7 +29,6 @@ export default {
     VideoElement
   },
   data: () => ({
-    showModal: false,
     btnContent: [
       {
         name: '三园工程',
@@ -44,24 +45,20 @@ export default {
       }
     ]
   }),
+  computed: {
+    showModal: {
+      get () {
+        return this.$store.state.showModal
+      },
+      set (val) {
+        this.$store.state.showModal = val
+      }
+    }
+  },
   mounted () {
     this.$nextTick(() => {
 
     })
-  },
-  methods: {
-    onclickBtn (mode) {
-      console.log(this.showModal)
-
-      if (mode === 'link') {
-        return
-      }
-
-      if (mode === 'base') {
-        this.showModal = true
-        console.log(this.showModal)
-      }
-    }
   }
 }
 </script>
