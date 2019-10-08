@@ -5,16 +5,17 @@
   height: 100vh
 
   .video-element
-    +justify-vertical-center()
     width: 100%
+    left: 0
+    right: 0
     height: 100%
 
 
   .btn-container
     position: absolute
     height: $btn-container-height
-    padding-left: 20%
-    padding-right: 20%
+    padding-left: 15%
+    padding-right: 15%
     display: flex
     flex-direction: row
     flex-wrap: nowrap
@@ -30,6 +31,7 @@
       float: left
       margin: $base-rem
       margin-bottom: 0
+      margin-top: $base-rem * 2
       line-height: $base-rem*5
       inline-size: 25%
 
@@ -45,7 +47,7 @@
           color: map-get($white, 'base')
           text-decoration: none
           font-weight: normal
-          font-size: 2.2 * $base-rem
+          font-size: 2.8 * $base-rem
           transition: .2s all linear
           filter: drop-shadow(5px 5px 5px rgba(26, 58, 70, 0.7))
 
@@ -60,33 +62,34 @@
           stroke: $yellow
 
         #text a
-          font-size: 2.3 * $base-rem
+          font-size: 2.7 * $base-rem
           font-weight: bold
 
 
       &:active
-
         #shape
           stroke-width: .4*$base-rem
 
         #text a
           font-size: 2.8 * $base-rem
 
+
+
       svg
         +justify-vertical-center()
-        height: 80%
+        height: 100%
         width: 100%
 
         #shape
           bottom: 0
           left: 0
           width: 80%
-          height: 50%
+          height: 60%
           stroke-width: .4* $base-rem
           fill: transparent
           stroke: $yellow
-          stroke-dashoffset: -142%
-          stroke-dasharray: 60%, 280%
+          stroke-dashoffset: -150%
+          stroke-dasharray: 58%, 280%
           transition: 1s all ease
 
 #modal-container
@@ -98,52 +101,86 @@
   bottom: 0
   right: 0
   left: 0
-  margin: auto
+  //margin: auto
   background: url("../Dark-Grey-Texture-Wallpaper-5.jpg")
-  opacity: .9
-  z-index: 10
+  background-size: cover
+  opacity: .90
+  z-index: 2
+  animation: show .4s ease-in
 
   .modal-background
     display: table-cell
     text-align: center
     vertical-align: middle
 
+
+
     .modal
-      background: white
-      padding: 50px
+      background: transparent
+      padding-top: 1%
+      padding-bottom: 1%
+      padding-left: 5%
+      padding-right: 5%
+      margin: auto
       display: inline-block
-      border-radius: 3px
       font-weight: 300
-      position: relative
-      max-height: 60%
-      max-width: 23%
-      overflow-y: scroll
+      //max-height: 60%
+      width: 50%
+      //overflow-y: scroll
+      border: 1px solid $yellow
+      border-bottom-left-radius: 10px
+      border-top-right-radius: 10px
+      //border-radius: 10px
       text-align: left
+      color: #fff
+
+
+      .border1
+        top: 1.7%
+        left: 19%
+        position: absolute
+
+      .border2
+        left: auto
+        top: auto
+        bottom: 1.7%
+        right: 19%
+        rotation-point: 50% 50%
+        transform: rotate(180deg)
+
+
 
       h2
         text-align: center
-        font-size: $base-rem*1.5
-        line-height: $base-rem*2
+        font-size: $base-rem*4
+        line-height: $base-rem*8
         margin-bottom: 15px
+        font-weight: bold
 
       ul
         margin: $base-rem
         list-style: none
+
         li
-          font-size: $base-rem * 1.3
-          line-height: $base-rem * 2
-          font-weight: normal
+          font-size: $base-rem * 2
+          line-height: $base-rem * 3.5
+          font-weight: 600
+          //text-align: center
+
           ul
             list-style: decimal
+
             li
-              font-weight: 300
-              font-size: $base-rem * 1.2
-              line-height: $base-rem * 2
+              margin-left: 0
+              text-align: left
+              font-weight: 200
+              font-size: $base-rem * 1.8
+              line-height: $base-rem * 3.5
 
 
       p
-        font-size: $base-rem * 1.2
-        line-height: $base-rem * 2
+        font-size: $base-rem * 1.8
+        line-height: $base-rem * 3.2
 
       .modal-svg
         position: absolute
@@ -156,6 +193,6 @@
         rect
           stroke: #000
           stroke-width: $base-rem
-          stroke-dasharray: 50%,50%
+          stroke-dasharray: 50%, 50%
           stroke-dashoffset: 50%
 

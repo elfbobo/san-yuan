@@ -6,6 +6,7 @@
         v-for="(item,i) in btnContent"
         :key="i"
         :mode="item.type"
+        :link="item.link"
       >{{ item.name }}</intro-btn>
     </div>
     <modal-element
@@ -32,16 +33,20 @@ export default {
     btnContent: [
       {
         name: '三园工程',
-        type: 'base'
+        type: 'base',
+        link: ''
       }, {
         name: '美丽家园',
-        type: 'link'
+        type: 'link',
+        link: 'http://192.168.26.20/#/beautiful'
       }, {
         name: '绿色田园',
-        type: 'link'
+        type: 'link',
+        link: 'http://192.168.26.20/#/green'
       }, {
         name: '幸福乐园',
-        type: 'link'
+        type: 'link',
+        link: 'http://192.168.26.20/#/happiness'
       }
     ]
   }),

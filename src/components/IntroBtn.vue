@@ -27,6 +27,10 @@ export default {
     mode: {
       type: [Object, Boolean, String],
       default: 'base'
+    },
+    link: {
+      type: [Object, Boolean, String],
+      default: 'http://192.168.26.20/#/beautiful'
     }
   },
   computed: {
@@ -43,6 +47,8 @@ export default {
     onclickBtn () {
       if (this.mode === 'base') {
         this.showModal = true
+      } else {
+        window.location.href = this.link
       }
     }
   }
