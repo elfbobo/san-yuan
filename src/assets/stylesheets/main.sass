@@ -26,6 +26,9 @@
     z-index: 2
     background: linear-gradient(to bottom, transparent, map-get($white, 'darken-3'))
 
+    &
+      height: $btn-container-height + $base-rem*1.5
+      padding-bottom: $base-rem*1.5
     div.intro-btn
       position: relative
       float: left
@@ -42,14 +45,14 @@
         width: 100%
 
         a
-
           margin: auto
           color: map-get($white, 'base')
           text-decoration: none
           font-weight: normal
           font-size: 2.8 * $base-rem
-          transition: .2s all linear
+          transition: .1s all ease
           filter: drop-shadow(5px 5px 5px rgba(26, 58, 70, 0.7))
+
 
 
       &:hover
@@ -61,11 +64,8 @@
           stroke-dasharray: 50, 0
           stroke: $yellow
 
-        svg
-          margin-bottom: 10px
 
         #text
-          margin-top: 0
           a
             font-size: 3 * $base-rem
             font-weight: bold
