@@ -22,7 +22,6 @@
     "eslint-plugin-vue": "^5.0.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
-    "video.js": "^7.6.5",
     "vue-template-compiler": "^2.6.10"
   }
 }
