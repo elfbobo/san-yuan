@@ -53,14 +53,10 @@
 </template>
 
 <script>
-import border1 from '../assets/border1.png'
-const words = require('../assets/text.json')
 export default {
   name: 'ModalElement',
   data: () => ({
-    title: '上海市乡村振兴“三园工程”简介',
-    words: words,
-    border1: border1
+    title: '上海市乡村振兴“三园工程”简介'
   }),
   computed: {
     showModal: {
@@ -79,9 +75,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.strong-number :first-letter {
-  font-weight: bold;
-}
-</style>

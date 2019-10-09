@@ -1,6 +1,6 @@
-$font-size: 20px !default;
-$base-rem: .618rem !default;
-$btn-container-height: $base-rem * 10 !default;
+$font-size: 120px !default;
+$base-rem: 0.08333rem !default;
+$btn-container-height: 22vh !default;
 
 
 $white:(
@@ -13,7 +13,8 @@ $white:(
         'darken-1': #757575,
         'darken-2': #616161,
         'darken-3': #424242,
-        'darken-4': #212121
+        'darken-4': #212121,
+        'darken-5': #000
 ) !default;
 
 $blue: (

@@ -1,7 +1,7 @@
 .container
   position: relative
   float: left
-  width: 100%
+  width: 100vw
   height: 100vh
 
   .video-element
@@ -14,8 +14,8 @@
   .btn-container
     position: absolute
     height: $btn-container-height
-    padding-left: 15%
-    padding-right: 15%
+    padding-left: 30vh
+    padding-right: 30vh
     display: flex
     flex-direction: row
     flex-wrap: nowrap
@@ -23,79 +23,76 @@
     bottom: 0
     left: 0
     right: 0
-    z-index: 2
-    background: linear-gradient(to bottom, transparent, map-get($white, 'darken-3'))
+    z-index: 9
+    background: linear-gradient(to bottom, transparent, map-get($white, 'darken-5'))
 
     &
-      height: $btn-container-height + $base-rem*1.5
-      padding-bottom: $base-rem*1.5
+      height: $btn-container-height
+      padding-bottom: $base-rem*2.5
     div.intro-btn
       position: relative
       float: left
-      margin: $base-rem
+      margin: $btn-container-height * .06
       margin-bottom: 0
-      margin-top: $base-rem * 2
-      line-height: $base-rem*5
+      margin-top: $btn-container-height * .1
       inline-size: 25%
+
+      $line-size: $btn-container-height * .4
 
       #text
         text-align: center
-        margin-top: $base-rem
+        margin-top: inherit
         margin-bottom: inherit
         width: 100%
-
-        a
-          margin: auto
-          color: map-get($white, 'base')
-          text-decoration: none
-          font-weight: normal
-          font-size: 2.8 * $base-rem
-          transition: .1s all ease
-          filter: drop-shadow(5px 5px 5px rgba(26, 58, 70, 0.7))
+        line-height: $line-size
+        font-weight: normal
+        font-size: $btn-container-height * .22
+        color: map-get($white, 'base')
+        transition: .3s all ease
 
 
 
       &:hover
         cursor: pointer
-
-        #shape
-          stroke-width: .2*$base-rem
+        svg #shape
+          stroke-width: $btn-container-height * .1
           stroke-dashoffset: 0
-          stroke-dasharray: 50, 0
+          stroke-dasharray: 100, 0
           stroke: $yellow
 
 
         #text
-          a
-            font-size: 3 * $base-rem
-            font-weight: bold
+          font-size: $btn-container-height * .25
+          font-weight: bold
 
 
       &:active
         #shape
           stroke-width: .4*$base-rem
 
-        #text a
-          font-size: 2.8 * $base-rem
+        #text
+          font-size: $btn-container-height * .3
 
 
 
       svg
-        +justify-vertical-center()
-        height: 100%
+        margin-top: inherit
+        margin-bottom: inherit
+        position: absolute
+        height: $line-size
         width: 100%
+        overflow: visible
 
         #shape
-          bottom: 0
-          left: 0
-          width: 80%
-          height: 60%
-          stroke-width: .4* $base-rem
+          width: 100%
+          height: 100%
+          stroke-width: $btn-container-height * .2
           fill: transparent
           stroke: $yellow
-          stroke-dashoffset: -150%
-          stroke-dasharray: 58%, 280%
+          stroke-dashoffset: -208%
+          stroke-dasharray: 71%, 280%
           transition: 1s all ease
+
 
 #modal-container
   position: fixed
@@ -110,7 +107,7 @@
   background: url("../Dark-Grey-Texture-Wallpaper-5.jpg")
   background-size: cover
   opacity: .90
-  z-index: 2
+  z-index: 10
   animation: show .4s ease-in
 
   .modal-background
@@ -128,10 +125,12 @@
       padding-left: 5%
       padding-right: 5%
       margin: auto
-      display: inline-block
+      diplay: inline-block
       font-weight: 300
       //max-height: 60%
-      width: 50%
+      +fit-screen(100vw)
+        width: 40vw
+
       //overflow-y: scroll
       border: 1px solid $yellow
       border-bottom-left-radius: 10px

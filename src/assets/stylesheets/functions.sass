@@ -19,3 +19,7 @@
     opacity: 0
   100%
     opacity: .95
+
+=fit-screen($width)
+  @media screen and (max-width: #{$width})
+    @content
