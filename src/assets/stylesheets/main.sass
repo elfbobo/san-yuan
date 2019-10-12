@@ -3,12 +3,14 @@
   float: left
   width: 100vw
   height: 100vh
+  overflow: hidden
 
   .video-element
     width: 100%
     left: 0
     right: 0
     height: 100%
+    z-index: 1
 
 
   .btn-container
@@ -24,7 +26,7 @@
     left: 0
     right: 0
     z-index: 9
-    background: linear-gradient(to bottom, transparent, map-get($white, 'darken-5'))
+    background: linear-gradient(to bottom, transparent, map_get($white, 'darken-5'))
 
     &
       height: $btn-container-height
@@ -129,7 +131,7 @@
       font-weight: 300
       //max-height: 60%
       +fit-screen(100vw)
-        width: 40vw
+        width: 45vw
 
       //overflow-y: scroll
       border: 1px solid $yellow
@@ -157,35 +159,34 @@
 
       h2
         text-align: center
-        font-size: $base-rem*4
-        line-height: $base-rem*8
+        font-size: 0.426rem
+        line-height: 0.71rem
         margin-bottom: 15px
         font-weight: bold
 
       ul
-        margin: $base-rem
         list-style: none
 
         li
-          font-size: $base-rem * 2
-          line-height: $base-rem * 3.5
+          font-size: 0.1775rem
+          line-height: 0.355rem
           font-weight: 600
           //text-align: center
 
           ul
-            list-style: decimal
+            list-style: none
 
             li
               margin-left: 0
               text-align: left
               font-weight: 200
-              font-size: $base-rem * 1.8
-              line-height: $base-rem * 3.5
+              font-size: 0.1775rem
+              line-height: 0.355rem
 
 
       p
-        font-size: $base-rem * 1.8
-        line-height: $base-rem * 3.2
+        font-size: 0.1775rem
+        line-height: 0.355rem
 
       .modal-svg
         position: absolute
