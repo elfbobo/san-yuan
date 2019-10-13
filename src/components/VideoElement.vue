@@ -4,8 +4,8 @@
    class="video-element"
    :controls="controls"
    autoplay
-   muted
    loop
+   @click="playVideo"
  >
    <source :src="videoSrc" />
  </video>
@@ -19,6 +19,11 @@ export default {
     return {
       videoSrc: xczxg1,
       controls: false
+    }
+  },
+  methods: {
+    playVideo () {
+      this.$refs['video'].play()
     }
   }
 }
